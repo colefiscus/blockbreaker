@@ -2,10 +2,10 @@ import React from 'react';
 import './Movie.css';
 import { Link } from 'react-router-dom';
 
-const Movie = ({ film }) => {
-    console.log(film)
+const Movie = ({ film, removeSpaces, matchMovie }) => {
+
     return (
-        <Link to={`/movie/${film.title}`}>
+        <Link to={`/movie/${removeSpaces(film.title)}`} onClick={() => matchMovie(film.title)} className="movieInfo">
             <section>
                 <p className="movieTitle">{film.title}</p>
                 <p className="movieRating">{film.average_rating.toFixed(1)}</p>

@@ -1,6 +1,6 @@
-export const getAllMovies = (url) => {
+const getMovies = (url) => {
     return fetch(url)
         .then(response => response.json())
 }
 
-// https://rancid-tomatillos.herokuapp.com/api/v2
+export default getMovies;
