@@ -1,9 +1,12 @@
 header {
+    font-family: 'Bungee';
+    font-size: large;
     position: sticky;
     top: 0;
     text-align: center;
-    background-color: #0E3FA9;
+    background-color: #000059;
     border-bottom: 5px solid #FFA901;
+    border-top: 5px solid #FFA901;
     color: #FFA901;
     z-index: 2;
 }

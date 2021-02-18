@@ -1,11 +1,12 @@
-section {
+.movieInfo section {
+    font-family: 'Expletus Sans';
     display: flex;
     justify-content: space-between;
     text-align: center;
     writing-mode: vertical-rl;
     height: 55%;
     padding: 1%;
-    background-color: #0E3FA9;
+    background-color: #000059;
     color: #FFA901;
     margin: 10%;
     border: 3px double black;
@@ -18,15 +19,15 @@ section {
     text-decoration: none;
 }
 
-section:hover {
+.movieInfo section:hover {
     border: 1px solid;
-    box-shadow: inset 0 0 20px #FFA901, 0 0 20px white;
+    box-shadow: inset 0 0 20px #FFA901, 0 0 20px #FFA901;
     text-shadow: 3px 3px 2px #000000; 
     transform: scale(1.1) rotate(-3deg);
     z-index: 1;
   }
 
-section p {
+.movieInfo section p {
     font-size: larger;
 }
 

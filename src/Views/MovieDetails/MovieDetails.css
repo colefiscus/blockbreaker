@@ -1,0 +1,55 @@
+.movieDetails {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #141414;
+}
+
+.movieTitle {
+  text-align: center;
+  font-family: 'Bungee Shade';
+  border: 3px dashed #000059;
+  font-size: 6vh;
+  background-color: #FFA901;
+  color: #000059;
+  width: 95%;
+  margin-top: 2%;
+}
+.movieTitle h1 {
+  margin: 1%;
+}
+.movieTitle h2 {
+  font-family: 'Bungee';
+  font-size: x-large;
+  margin: 1%;
+}
+
+.movieSpecifics {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Expletus Sans';
+  text-align: center;
+  min-height: 450px;
+  width: 60%;
+  background-color: #FFA901;
+  color: #000059;
+  border: 3px dashed #000059;
+  margin-right: 2%;
+}
+
+.movieOverview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 2%;
+}
+
+.movieOverview img {
+  border: 5px solid red;
+  width: 30%;
+  height: 450px;
+  margin-left: 3%;
+}
