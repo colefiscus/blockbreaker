@@ -49,7 +49,7 @@
 }
 
 .movieOverview img {
-  /* border: 3px dashed #FFA901; */
+  border: 3px dashed #FFA901;
   border-radius: 5px;
   width: 30%;
   height: 450px;

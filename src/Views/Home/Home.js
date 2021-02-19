@@ -2,36 +2,41 @@ import React, { Component } from 'react';
 import './Home.css';
 import * as apiCalls from '../../util';
 import Movie from '../../Components/Movie/Movie';
+import MovieChoice from '../../Components/MovieChoice/MovieChoice';
 
 const Home = ({ movies, removeSpaces, matchMovie }) => {
 
-    const allMovies = movies.map(movie => {
-            return <Movie film={movie} key={movie.id} removeSpaces={removeSpaces} matchMovie={matchMovie}/>
-        })
-
-    const getRandomMovie = () => {
-        const randomNum = Math.floor(Math.random() * movies.length)
-        return randomNum
+    const getRandomNumber = () => {
+        return Math.floor(Math.random() * movies.length);
     }
-
-    const movieChoices = [];
+    
+    const randomMovies = [];
 
     for(let i = 0; i < 5; i++) {
-        let movie = movies[getRandomMovie()]
-        if (movie.title !== "Maquis") {
-            movieChoices.push(movie)
+        let movie = movies[getRandomNumber()];
+        if (movie.title !== "Maratón After") {
+            randomMovies.push(movie);
         } else {
             i--
         }
     }
+    
+    const movieChoices = randomMovies.map(movie => {
+        return <MovieChoice film={movie} key={movie.id} removeSpaces={removeSpaces} matchMovie={matchMovie} />
+    })
 
-    console.log(movies)
-
+    const allMovies = movies.map(movie => {
+        return <Movie film={movie} key={movie.id} removeSpaces={removeSpaces} matchMovie={matchMovie} />
+    })
+    
     return (
         <div className="movieShelf">
-            <aside>
-                <h1>Popular:</h1>
-            </aside>
+            <div className="moviesAside">
+                <h1><u>Trending Now</u></h1>
+                <aside>
+                    {movieChoices}
+                </aside>
+            </div>
             <main>
                 {allMovies}
             </main>
