@@ -2,9 +2,9 @@ import React from 'react';
 import './MovieDetails.css';
 import { Link } from 'react-router-dom';
 
-const MovieDetails = ({ currentMovie, isLoading }) => {
+const MovieDetails = ({ currentMovie }) => {
 
-  if (isLoading) {
+  if (!currentMovie) {
     return (
       <h1 className="loading">Loading...</h1>
     )

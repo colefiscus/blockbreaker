@@ -1,0 +1,39 @@
+footer {
+  height: fit-content;
+  font-family: 'Expletus Sans';
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 5px solid #FFA901;
+  background-color: #000059;
+  color: #FFA901;
+}
+
+footer p {
+  text-align: start;
+  margin-left: 2%;
+}
+
+.movieQuote {
+  width: 75%;
+}
+
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdIcons {
+  display: flex;
+  margin-right: 1%;
+}
+
+.liLogo {
+  width: 4vh;
+}
+
+.ghLogo {
+  width: 8vh;
+  padding-right: 20%;
+}

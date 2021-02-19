@@ -1,4 +1,5 @@
 .movieDetails {
+  min-height: 87vh;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -48,7 +49,8 @@
 }
 
 .movieOverview img {
-  border: 5px solid red;
+  /* border: 3px dashed #FFA901; */
+  border-radius: 5px;
   width: 30%;
   height: 450px;
   margin-left: 3%;
