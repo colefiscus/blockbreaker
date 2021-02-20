@@ -7,6 +7,12 @@ header {
     background-color: #000059;
     border-bottom: 5px solid #FFA901;
     border-top: 5px solid #FFA901;
-    color: #FFA901;
     z-index: 99;
+    padding: 1%;
+}
+
+.header {
+    color: #FFA901;
+    text-decoration: none;
+    font-size: xx-large;
 }

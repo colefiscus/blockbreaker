@@ -11,10 +11,11 @@ const Home = ({ movies, removeSpaces, matchMovie }) => {
     }
     
     const randomMovies = [];
+    const randomMovieIDs = [];
 
     for(let i = 0; i < 5; i++) {
         let movie = movies[getRandomNumber()];
-        if (movie.title !== "Maratón After") {
+        if (movie.title !== "Maratón After" && !randomMovieIDs.includes(movie.id)) {
             randomMovies.push(movie);
         } else {
             i--
