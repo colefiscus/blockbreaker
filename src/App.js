@@ -6,7 +6,7 @@ import Footer from './Components/Footer/Footer';
 import Login from './Views/Login/Login';
 import Home from './Views/Home/Home';
 import MovieDetails from './Views/MovieDetails/MovieDetails';
-import getMovies from './util';
+import getData from './util';
 
 
 class App extends Component {
@@ -14,13 +14,18 @@ class App extends Component {
     super()
     this.state = {
         movies: [],
+        trivia: {},
         currentMovie: '',
     }
   }
 
   componentDidMount = () => {
-    getMovies("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-        .then(movies => this.setState( {movies: movies}))
+    const allMovies = getData("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+      .then(movies => movies)
+    const triviaQuestion = getData("https://opentdb.com/api.php?amount=1&category=11&difficulty=easy&type=multiple")
+      .then(question => question)
+    Promise.all([allMovies, triviaQuestion])
+      .then((data) => this.setState({ movies: data[0].movies, trivia: data[1].results[0] }))
   }
 
   removeSpaces = movie => {
@@ -28,11 +33,11 @@ class App extends Component {
   }
 
   matchMovie = title => {
-    const matchedMovie = this.state.movies.movies.find(movie => {
+    const matchedMovie = this.state.movies.find(movie => {
       return this.removeSpaces(movie.title) === this.removeSpaces(title)
     })
-      getMovies(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${matchedMovie.id}`)
-      .then(movie => this.setState( { currentMovie: movie }))
+      getData(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${matchedMovie.id}`)
+        .then(movie => this.setState( { currentMovie: movie }))
   }
 
   render() {
@@ -40,7 +45,7 @@ class App extends Component {
       <>
         <Header />
         <Route exact path="/" component={Login} />
-        <Route exact path="/home" render={() => <Home movies={this.state.movies.movies} matchMovie={this.matchMovie} removeSpaces={this.removeSpaces}/>} />
+        <Route exact path="/home" render={() => <Home movies={this.state.movies} matchMovie={this.matchMovie} removeSpaces={this.removeSpaces} trivia={this.state.trivia} /> } />
         <Route exact path="/movie/:title" 
           render={() => <MovieDetails currentMovie={this.state.currentMovie} /> }
           />

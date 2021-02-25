@@ -4,12 +4,18 @@ import { Link } from 'react-router-dom';
 
 const MovieDetails = ({ currentMovie }) => {
 
+  const scrollToTop = () => {
+    window.scrollTo(0,0 );
+  }
+
     if (!currentMovie) {
     return (
       <h1 className="loading">Loading...</h1>
     )
   } else {
 
+    scrollToTop()
+    
     const genres = currentMovie.movie.genres.join(" /  ")
     const releaseDate = new Date(`${currentMovie.movie.release_date}T12:00:00-07:00`).toLocaleDateString()
     const budget = currentMovie.movie.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

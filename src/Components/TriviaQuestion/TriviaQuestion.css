@@ -1,0 +1,61 @@
+.triviaQuestion {
+  background-color: #000059;
+  background-blend-mode: screen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 3px dashed #FFA901;
+  border-radius: 5px;
+  text-align: center;
+  padding-bottom: 1%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.triviaQuestion h2 {
+  font-family: 'Bungee';
+  color: #FFA901;
+  margin: 3%;
+  margin-top: 5%;
+}
+
+.triviaQuestion p {
+  color: #FFA901;
+  font-family: 'Expletus Sans';
+  font-size: larger;
+  width: 90%;
+  margin-top: 3%;
+}
+
+.triviaAnswers {
+  padding-bottom: 5%;
+}
+
+.triviaAnswers input {
+  font-family: 'Expletus Sans';
+  font-size: large;
+  background-color: #FFA901;
+  color: #000059;
+  border: 3px dotted #000059;
+  border-radius: 4px; 
+  height: 6vh;
+  width: 75%;
+  margin: 1%;
+}
+
+.triviaAnswers input:hover {
+  transform: scale(1.15);
+  background-color: #000059;
+  color: #FFA901;
+  border: 3px dotted #FFA901;
+}
+
+.wrongAnswer {
+  background-color: red;
+}
+
+.rigthAnswer {
+  background-color: green;
+}
