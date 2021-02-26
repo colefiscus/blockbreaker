@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #141414;
+  background: linear-gradient(130deg, #000000 0%, #000000cf 30%, #000000 50%, #000000cf 75%, #000000 95%);
 }
 
 .movieTitle {

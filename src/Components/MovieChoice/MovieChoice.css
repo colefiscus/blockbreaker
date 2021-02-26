@@ -12,10 +12,9 @@
   width: 33%;
   border: 2px solid #000059;
   position: absolute;
-  z-index: 2;
   color: #000059;
   background-color: #FFA901;
-  opacity: 77%;
+  opacity: 75%;
   text-decoration: none;
 }
 
