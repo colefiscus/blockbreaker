@@ -33,7 +33,10 @@
   padding-bottom: 5%;
 }
 
-.triviaAnswers input {
+.answerOne,
+.answerTwo,
+.answerThree,
+.answerFour {
   font-family: 'Expletus Sans';
   font-size: large;
   background-color: #FFA901;
@@ -45,7 +48,10 @@
   margin: 1%;
 }
 
-.triviaAnswers input:hover {
+.answerOne:hover,
+.answerTwo:hover,
+.answerThree:hover,
+.answerFour:hover {
   transform: scale(1.15);
   background-color: #000059;
   color: #FFA901;
@@ -54,8 +60,10 @@
 
 .wrongAnswer {
   background-color: red;
+  pointer-events: none;
 }
 
-.rigthAnswer {
+.rightAnswer {
   background-color: green;
+  pointer-events: none;
 }

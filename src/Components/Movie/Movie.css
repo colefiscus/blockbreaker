@@ -4,7 +4,7 @@
     justify-content: space-between;
     text-align: center;
     writing-mode: vertical-rl;
-    height: 60%;
+    height: 63%;
     padding-top: 5%;
     background-color: #000059;
     color: #FFA901;
@@ -34,4 +34,5 @@
 
 .movieRating {
     writing-mode: horizontal-tb;
+    margin: 0;
 }

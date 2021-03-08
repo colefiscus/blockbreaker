@@ -22,6 +22,23 @@ const TriviaQuestion = ({ trivia }) => {
     return allAnswers
   }
 
+  const revealTriviaFeedback = () => {
+    const answerOne =  document.querySelector('.answerOne');
+    const answerTwo = document.querySelector('.answerTwo');
+    const answerThree = document.querySelector('.answerThree');
+    const answerFour = document.querySelector('.answerFour');
+    const answers = [answerOne, answerTwo, answerThree, answerFour]
+
+    answers.forEach(answer => {
+      if (answer.value === trivia.correct_answer) {
+        answer.classList.add('rightAnswer')
+        answer.setAttribute('disabled', true)
+      } else {
+        answer.classList.add('wrongAnswer')
+      }
+    })
+  }
+
   const randomizedAnswers = randomizeQuestions()
 
   return (
@@ -29,10 +46,10 @@ const TriviaQuestion = ({ trivia }) => {
       <h2><u>MOVIE TRIVIA</u></h2>
       <p>{decodeQuestion(trivia.question)}</p>
       <form className="triviaAnswers">
-        <input type="button" value={randomizedAnswers[0]} />
-        <input type="button" value={randomizedAnswers[1]} />
-        <input type="button" value={randomizedAnswers[2]} />
-        <input type="button" value={randomizedAnswers[3]} />
+        <input className="answerOne" type="button" value={randomizedAnswers[0]} onClick={revealTriviaFeedback} />
+        <input className="answerTwo" type="button" value={randomizedAnswers[1]} onClick={revealTriviaFeedback} />
+        <input className="answerThree" type="button" value={randomizedAnswers[2]} onClick={revealTriviaFeedback} />
+        <input className="answerFour" type="button" value={randomizedAnswers[3]} onClick={revealTriviaFeedback} />
       </form>
     </section>
   )
