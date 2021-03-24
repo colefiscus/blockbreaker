@@ -1,10 +1,11 @@
 .loginGreeting {
-    height: 87vh;
+    background-color: #000000;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #000059;
+    color: #FFA901;
     border-left: 5px solid #000059;
     border-right: 5px solid #000059;
     text-align: center;

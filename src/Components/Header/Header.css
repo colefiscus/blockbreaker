@@ -9,6 +9,7 @@ header {
     border-top: 5px solid #FFA901;
     z-index: 99;
     padding: 1%;
+    height: 6%;
 }
 
 .header {

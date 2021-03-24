@@ -7,6 +7,7 @@ footer {
   border-top: 5px solid #FFA901;
   background-color: #000059;
   color: #FFA901;
+  height: 15%;
 }
 
 footer p {
@@ -16,6 +17,7 @@ footer p {
 
 .movieQuote {
   width: 75%;
+  max-height: 100%;
 }
 
 footer a {
