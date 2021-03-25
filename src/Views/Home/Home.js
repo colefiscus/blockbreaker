@@ -38,10 +38,10 @@ class Home extends Component {
                     <div className="moviesAside"> 
                         <aside>
                             <TriviaQuestion trivia={this.state.trivia} />
-                            <TrendingNow movies={this.state.movies} removeSpaces={this.props.removeSpaces} matchMovie={this.props.matchMovie} />
+                            <TrendingNow movies={this.state.movies} />
                         </aside>
                     </div>
-                    <MovieList movies={this.state.movies} removeSpaces={this.props.removeSpaces} matchMovie={this.props.matchMovie} />
+                    <MovieList movies={this.state.movies} />
                 </div>
             );
         }

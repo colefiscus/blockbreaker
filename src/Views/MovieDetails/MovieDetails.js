@@ -1,56 +1,78 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './MovieDetails.css';
+import getData from '../../util';
 import { Link } from 'react-router-dom';
 
-const MovieDetails = ({ currentMovie }) => {
+class MovieDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentMovie: ''
+    }
+  }
 
-  const scrollToTop = () => {
+  componentDidMount = () => {
+    getData(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
+        .then(movie => this.setState( { currentMovie: movie }))
+  }
+
+  scrollToTop = () => {
     window.scrollTo(0,0 );
   }
 
-    if (!currentMovie) {
-    return (
-      <h1 className="loading">Loading...</h1>
-    )
-  } else {
+  splitGenres = () => {
+    return this.state.currentMovie.movie.genres.join(" /  ")
+  }
 
-    scrollToTop()
+  modifyDate = () => {
+    return new Date(`${this.state.currentMovie.movie.release_date}T12:00:00-07:00`).toLocaleDateString()
+  }
+
+  modifyBudget = () => {
+    return this.state.currentMovie.movie.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  modifyRevenue = () => {
+    return this.state.currentMovie.movie.revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
     
-    const genres = currentMovie.movie.genres.join(" /  ")
-    const releaseDate = new Date(`${currentMovie.movie.release_date}T12:00:00-07:00`).toLocaleDateString()
-    const budget = currentMovie.movie.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    const revenue = currentMovie.movie.revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-    return (
-      <section className="movieDetails">
-        <div className="movieTitle">
-          <h1>{currentMovie.movie.title}</h1>
-          <h2>{currentMovie.movie.tagline}</h2>
-        </div>
-        <div className="movieBoxes">
-          <div className="movieOverview">
-            <article className="movieSummary">
-              <p><b>Genre(s):</b><br/>{genres}</p>
-              <div className="hr">
-                <hr />
-              </div>
-              <p><b>Overview:</b><br/>{currentMovie.movie.overview}</p>
-              <div className="hr">
-                <hr />
-              </div>              
-              <p><b>Stars:</b><br/>{currentMovie.movie.average_rating.toFixed(1)} / 10</p>
-            </article>  
-            <img src={currentMovie.movie.poster_path}/>
+  render = () => {
+    if (!this.state.currentMovie) {
+      return (
+        <h1 className="loading">Loading...</h1>
+      )
+    } else {
+      return (
+        <section className="movieDetails">
+          <div className="movieTitle">
+            <h1>{this.state.currentMovie.movie.title}</h1>
+            <h2>{this.state.currentMovie.movie.tagline}</h2>
           </div>
-          <article className="movieSpecifics">
-            <p><b>Release Date: </b>{releaseDate}</p>
-            <p><b>Runtime:</b> {currentMovie.movie.runtime} minutes</p>
-            <p><b>Budget:</b> ${budget}</p>
-            <p><b>Revenue:</b> ${revenue}</p>
-          </article>
-        </div>
-      </section>
-    )
+          <div className="movieBoxes">
+            <div className="movieOverview">
+              <article className="movieSummary">
+                <p><b>Genre(s):</b><br/>{this.splitGenres()}</p>
+                <div className="hr">
+                  <hr />
+                </div>
+                <p><b>Overview:</b><br/>{this.state.currentMovie.movie.overview}</p>
+                <div className="hr">
+                  <hr />
+                </div>              
+                <p><b>Stars:</b><br/>{this.state.currentMovie.movie.average_rating.toFixed(1)} / 10</p>
+              </article>  
+              <img src={this.state.currentMovie.movie.poster_path}/>
+            </div>
+            <article className="movieSpecifics">
+              <p><b>Release Date: </b>{this.modifyDate()}</p>
+              <p><b>Runtime:</b> {this.state.currentMovie.movie.runtime} minutes</p>
+              <p><b>Budget:</b> ${this.modifyBudget()}</p>
+              <p><b>Revenue:</b> ${this.modifyRevenue()}</p>
+            </article>
+          </div>
+        </section>
+      )
+    }
   }
 }
 

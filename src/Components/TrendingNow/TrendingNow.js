@@ -2,7 +2,7 @@ import React from 'react';
 import './TrendingNow.css';
 import MovieChoice from '../MovieChoice/MovieChoice';
 
-const TrendingNow = ({ movies, removeSpaces, matchMovie }) => {
+const TrendingNow = ({ movies }) => {
 
   const getRandomNumber = () => {
     return Math.floor(Math.random() * movies.length);
@@ -22,7 +22,7 @@ const TrendingNow = ({ movies, removeSpaces, matchMovie }) => {
   }
 
   const movieChoices = randomMovies.map(movie => {
-    return <MovieChoice film={movie} key={movie.id} removeSpaces={removeSpaces} matchMovie={matchMovie} />
+    return <MovieChoice film={movie} key={movie.id} />
   })
 
   return (
