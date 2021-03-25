@@ -13,19 +13,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-        movies: [],
-        trivia: {},
         currentMovie: '',
     }
-  }
-
-  componentDidMount = () => {
-    const allMovies = getData("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then(movies => movies)
-    const triviaQuestion = getData("https://opentdb.com/api.php?amount=1&category=11&difficulty=easy&type=multiple")
-      .then(question => question)
-    Promise.all([allMovies, triviaQuestion])
-      .then((data) => this.setState({ movies: data[0].movies, trivia: data[1].results[0] }))
   }
 
   removeSpaces = movie => {

@@ -4,7 +4,6 @@ import getData from '../../util';
 import MovieList from '../../Components/MovieList/MovieList';
 import TrendingNow from '../../Components/TrendingNow/TrendingNow';
 import TriviaQuestion from '../../Components/TriviaQuestion/TriviaQuestion';
-import { render } from '@testing-library/react';
 
 class Home extends Component {
     constructor(props) {
@@ -27,25 +26,6 @@ class Home extends Component {
     scrollToTop = () => {
         window.scrollTo(0, 0);
     }
-
-    // getRandomNumber = () => {
-    //     return Math.floor(Math.random() * this.state.movies.length);
-    // }
-
-    // filterMovieChoices = () => {
-    //     const randomMovies = [];
-    //     const randomMovieIDs = [];
-    
-    //     for(let i = 0; i < 5; i++) {
-    //         let movie = this.state.movies[this.getRandomNumber()];
-    //         if (movie.title !== "Maratón After" && !randomMovieIDs.includes(movie.id)) {
-    //             randomMovieIDs.push(movie.id)
-    //             randomMovies.push(movie);
-    //         } else {
-    //             i--
-    //         }
-    //     }
-    // }
     
     render = () => {
         if (!this.state.movies.length || !this.state.trivia) {
