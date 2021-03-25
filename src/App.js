@@ -45,11 +45,14 @@ class App extends Component {
       <>
         <Header />
         <Route exact path="/" component={Login} />
-        <Route exact path="/home" render={() => <Home movies={this.state.movies} matchMovie={this.matchMovie} removeSpaces={this.removeSpaces} trivia={this.state.trivia} /> } />
-        <Route exact path="/movie/:title" 
-          render={() => <MovieDetails currentMovie={this.state.currentMovie} /> }
-          />
-          <Footer />
+        <Route exact path="/home" render={() => 
+          <Home movies={this.state.movies} 
+                matchMovie={this.matchMovie} 
+                removeSpaces={this.removeSpaces} 
+                trivia={this.state.trivia} /> } />
+        <Route exact path="/movie/:title" render={() => 
+          <MovieDetails currentMovie={this.state.currentMovie} /> } />
+        <Footer />
       </>
     )
   }

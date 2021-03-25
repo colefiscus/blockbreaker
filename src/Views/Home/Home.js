@@ -1,58 +1,71 @@
 import React, { Component } from 'react';
 import './Home.css';
-import * as apiCalls from '../../util';
-import Movie from '../../Components/Movie/Movie';
-import MovieChoice from '../../Components/MovieChoice/MovieChoice';
+import getData from '../../util';
+import MovieList from '../../Components/MovieList/MovieList';
+import TrendingNow from '../../Components/TrendingNow/TrendingNow';
 import TriviaQuestion from '../../Components/TriviaQuestion/TriviaQuestion';
+import { render } from '@testing-library/react';
 
-const Home = ({ movies, removeSpaces, matchMovie, trivia }) => {
+class Home extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            movies: [],
+            trivia: {}
+        }
+    }
 
-    const scrollToTop = () => {
+    componentDidMount = () => {
+        const allMovies = getData("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+          .then(movies => movies)
+        const triviaQuestion = getData("https://opentdb.com/api.php?amount=1&category=11&difficulty=easy&type=multiple")
+          .then(question => question)
+        Promise.all([allMovies, triviaQuestion])
+          .then((data) => this.setState({ movies: data[0].movies, trivia: data[1].results[0] }))
+    }
+
+    scrollToTop = () => {
         window.scrollTo(0, 0);
     }
 
-    const getRandomNumber = () => {
-        return Math.floor(Math.random() * movies.length);
-    }
-    
-    const randomMovies = [];
-    const randomMovieIDs = [];
+    // getRandomNumber = () => {
+    //     return Math.floor(Math.random() * this.state.movies.length);
+    // }
 
-    for(let i = 0; i < 5; i++) {
-        let movie = movies[getRandomNumber()];
-        if (movie.title !== "Maratón After" && !randomMovieIDs.includes(movie.id)) {
-            randomMovieIDs.push(movie.id)
-            randomMovies.push(movie);
+    // filterMovieChoices = () => {
+    //     const randomMovies = [];
+    //     const randomMovieIDs = [];
+    
+    //     for(let i = 0; i < 5; i++) {
+    //         let movie = this.state.movies[this.getRandomNumber()];
+    //         if (movie.title !== "Maratón After" && !randomMovieIDs.includes(movie.id)) {
+    //             randomMovieIDs.push(movie.id)
+    //             randomMovies.push(movie);
+    //         } else {
+    //             i--
+    //         }
+    //     }
+    // }
+    
+    render = () => {
+        if (!this.state.movies.length || !this.state.trivia) {
+            return (
+              <h1 className="loading">Loading...</h1>
+            )
         } else {
-            i--
+            return (
+                <div className="movieShelf">
+                    <div className="moviesAside"> 
+                        <aside>
+                            <TriviaQuestion trivia={this.state.trivia} />
+                            <TrendingNow movies={this.state.movies} removeSpaces={this.props.removeSpaces} matchMovie={this.props.matchMovie} />
+                        </aside>
+                    </div>
+                    <MovieList movies={this.state.movies} removeSpaces={this.props.removeSpaces} matchMovie={this.props.matchMovie} />
+                </div>
+            );
         }
     }
-    
-    const movieChoices = randomMovies.map(movie => {
-        return <MovieChoice film={movie} key={movie.id} removeSpaces={removeSpaces} matchMovie={matchMovie} />
-    })
-
-    const allMovies = movies.map(movie => {
-        return <Movie film={movie} key={movie.id} removeSpaces={removeSpaces} matchMovie={matchMovie} />
-    })
-
-    scrollToTop();  
-    
-    return (
-        <div className="movieShelf">
-            <div className="moviesAside">
-                
-                <aside>
-                    <TriviaQuestion trivia={trivia} />
-                    <h1><u>Trending Now</u></h1>
-                    {movieChoices}
-                </aside>
-            </div>
-            <main>
-                {allMovies}
-            </main>
-        </div>
-    )
 }
 
 export default Home;
