@@ -1,0 +1,12 @@
+.loadingPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(35deg, #a8a8a956 0%, #000000 30%, #000000 80%, #a8a8a956 100%);
+  background-color: #000000;
+  color: #FFA901;
+  font-family: 'Bungee';
+  font-size: x-large;
+}

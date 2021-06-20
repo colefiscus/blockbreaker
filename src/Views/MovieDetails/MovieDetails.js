@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './MovieDetails.css';
 import getData from '../../util';
+import Loading from '../Loading/Loading';
 import { Link } from 'react-router-dom';
 
 class MovieDetails extends Component {
@@ -39,7 +40,7 @@ class MovieDetails extends Component {
   render = () => {
     if (!this.state.currentMovie) {
       return (
-        <h1 className="loading">Loading...</h1>
+        <Loading />
       )
     } else {
       return (

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
 import getData from '../../util';
+import Loading from '../Loading/Loading';
 import MovieList from '../../Components/MovieList/MovieList';
 import TrendingNow from '../../Components/TrendingNow/TrendingNow';
 import TriviaQuestion from '../../Components/TriviaQuestion/TriviaQuestion';
@@ -30,7 +31,7 @@ class Home extends Component {
     render = () => {
         if (!this.state.movies.length || !this.state.trivia) {
             return (
-              <h1 className="loading">Loading...</h1>
+              <Loading />
             )
         } else {
             return (

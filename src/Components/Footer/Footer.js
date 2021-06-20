@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="pdIcons">
       <a href="https://github.com/colefiscus">
           <img className="ghLogo" src={ghLogo} />
-        </a>
+      </a>
         <a href="https://www.linkedin.com/in/cole-fiscus-83b4b9ba/">
           <img className="liLogo" src={liLogo}/>
         </a>
