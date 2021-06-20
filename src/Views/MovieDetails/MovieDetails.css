@@ -7,6 +7,9 @@
 }
 
 .movieTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-family: 'Bungee Shade';
   border: 3px dashed #000059;
@@ -23,6 +26,19 @@
   font-family: 'Bungee';
   font-size: x-large;
   margin: 1%;
+}
+.movieDetailsText {
+  width: 100%;
+  margin-right: 10vw;
+}
+
+.backButton {
+  width: 10vw;
+}
+.backButtonLink {
+  width: 10vw;
+  padding-left: 5px;
+  display: flex;
 }
 
 .movieSummary {

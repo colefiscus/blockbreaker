@@ -47,11 +47,13 @@ class MovieDetails extends Component {
       return (
         <section className="movieDetails">
           <div className="movieTitle">
-            <Link to='/home'>
+            <Link to='/home' className="backButtonLink">
               <img className="backButton" src={backButton} alt='back button' />
             </Link>
-            <h1>{this.state.currentMovie.movie.title}</h1>
-            <h2>{this.state.currentMovie.movie.tagline}</h2>
+            <div className="movieDetailsText">
+              <h1>{this.state.currentMovie.movie.title}</h1>
+              <h2>{this.state.currentMovie.movie.tagline}</h2>
+            </div>
           </div>
           <div className="movieBoxes">
             <div className="movieOverview">
