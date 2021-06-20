@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './MovieDetails.css';
 import getData from '../../util';
 import Loading from '../Loading/Loading';
+import backButton from '../../Images/rewind-symbol.png';
 import { Link } from 'react-router-dom';
 
 class MovieDetails extends Component {
@@ -46,6 +47,9 @@ class MovieDetails extends Component {
       return (
         <section className="movieDetails">
           <div className="movieTitle">
+            <Link to='/home'>
+              <img className="backButton" src={backButton} alt='back button' />
+            </Link>
             <h1>{this.state.currentMovie.movie.title}</h1>
             <h2>{this.state.currentMovie.movie.tagline}</h2>
           </div>
