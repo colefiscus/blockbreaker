@@ -32,7 +32,6 @@ To add more features to this project, or to simply view the code in action...
 ## Current Issues
 
 - The app needs to be fully responsive, it is currently only suitable for desktop use.
-- Needs an error screen / 404 screen for mistyped URLs on the domain.
 - Some movie poster images on the detail pages are warped - image could do with some styling for consistency.
 - The movie trivia is currently not accessible since the use of red / green colors are used to indicate the correct answer.
 - The movie trivia also needs to be refactored to reload on the clicking of the home icon in the header.
