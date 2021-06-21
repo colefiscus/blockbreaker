@@ -5,7 +5,9 @@ import './Error.css';
 const Error = () => {
   return (
     <div className='errorPage'>
-      <h2>This page cannot be found. Please check spelling in URL or click below to be directed to home page.</h2>
+      <div className='errorPageText'>
+        <h2>This page cannot be found. Please check spelling in URL or click below to be directed to home page.</h2>
+      </div>
       <Link to='/home' className='errorHomeLink'>HOME</Link>
     </div>
   )
