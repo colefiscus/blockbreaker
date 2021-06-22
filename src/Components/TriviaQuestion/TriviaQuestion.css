@@ -58,6 +58,7 @@
   background-color: #000059;
   color: #FFA901;
   border: 3px dotted #FFA901;
+  cursor: pointer;
 }
 
 .wrongAnswer {

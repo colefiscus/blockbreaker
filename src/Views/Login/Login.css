@@ -30,3 +30,6 @@
     border: 5px solid #FFA901;
     color: #FFA901;
 }
+.enterButton:hover {
+    cursor: pointer;
+}
