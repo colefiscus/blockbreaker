@@ -22,6 +22,11 @@ const TriviaQuestion = ({ trivia }) => {
     return allAnswers
   }
 
+  const revealTriviaRefresh = () => {
+    const triviaButton = document.querySelector('.triviaRefreshButton');
+    triviaButton.classList.remove('hidden');
+  }
+
   const revealTriviaFeedback = () => {
     const answerOne =  document.querySelector('.answerOne');
     const answerTwo = document.querySelector('.answerTwo');
@@ -32,11 +37,16 @@ const TriviaQuestion = ({ trivia }) => {
     answers.forEach(answer => {
       if (answer.value === trivia.correct_answer) {
         answer.classList.add('rightAnswer')
-        answer.setAttribute('disabled', true)
+        // answer.setAttribute('disabled', true)
       } else {
         answer.classList.add('wrongAnswer')
       }
     })
+    revealTriviaRefresh();
+  }
+
+  const refreshTrivia = () => {
+    window.location.reload();
   }
 
   const randomizedAnswers = randomizeQuestions()
@@ -51,6 +61,7 @@ const TriviaQuestion = ({ trivia }) => {
         <input className="answerThree" type="button" value={randomizedAnswers[2]} onClick={revealTriviaFeedback} />
         <input className="answerFour" type="button" value={randomizedAnswers[3]} onClick={revealTriviaFeedback} />
       </form>
+      <button className='triviaRefreshButton hidden' onClick={() => refreshTrivia()}>REFRESH</button>
     </section>
   )
 }
