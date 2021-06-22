@@ -37,7 +37,6 @@ const TriviaQuestion = ({ trivia }) => {
     answers.forEach(answer => {
       if (answer.value === trivia.correct_answer) {
         answer.classList.add('rightAnswer')
-        // answer.setAttribute('disabled', true)
       } else {
         answer.classList.add('wrongAnswer')
       }

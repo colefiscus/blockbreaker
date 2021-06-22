@@ -61,13 +61,13 @@
 }
 
 .wrongAnswer {
-  background-color: red;
   pointer-events: none;
 }
 
 .rightAnswer {
   background-color: green;
   pointer-events: none;
+  transform: scale(1.1);
 }
 
 .triviaRefreshButton {
@@ -87,4 +87,5 @@
   background-color: #000059;
   color: #FFA901;
   border: 3px dotted #FFA901;
+  cursor: pointer;
 }
