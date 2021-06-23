@@ -67,8 +67,10 @@ class MovieDetails extends Component {
                   <hr />
                 </div>              
                 <p><b>Stars:</b><br/>{this.state.currentMovie.movie.average_rating.toFixed(1)} / 10</p>
-              </article>  
-              <img className="moviePosterImage" src={this.state.currentMovie.movie.poster_path} alt={`${this.state.currentMovie.movie.title}'s theater poster`} />
+              </article>
+              <div className="moviePosterImage">
+                <img src={this.state.currentMovie.movie.poster_path} alt={`${this.state.currentMovie.movie.title}'s theater poster`} />
+              </div>  
             </div>
             <article className="movieSpecifics">
               <p><b>Release Date: </b>{this.modifyDate()}</p>

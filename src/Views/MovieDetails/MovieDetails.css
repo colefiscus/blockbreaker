@@ -50,6 +50,7 @@
   font-size: larger;
   text-align: center;
   min-height: 450px;
+  height: 86%;
   width: 60%;
   background-color: #FFA901;
   color: #000059;
@@ -83,9 +84,12 @@ hr {
 .movieOverview img {
   border: 3px dashed #FFA901;
   border-radius: 5px;
-  width: 30%;
-  height: 450px;
+  width: 100%;
+  height: auto;
   margin-left: 3%;
+}
+.moviePosterImage {
+  width: 30%;
 }
 
 .movieSpecifics {
