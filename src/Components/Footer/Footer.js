@@ -15,10 +15,10 @@ const Footer = () => {
       </div>
       <div className="pdIcons">
       <a href="https://github.com/colefiscus">
-          <img className="ghLogo" src={ghLogo} />
+          <img className="ghLogo" src={ghLogo} alt='GitHub logo' />
       </a>
-        <a href="https://www.linkedin.com/in/cole-fiscus-83b4b9ba/">
-          <img className="liLogo" src={liLogo}/>
+        <a href="https://www.linkedin.com/in/colefiscus/">
+          <img className="liLogo" src={liLogo} alt='LinkedIn logo' />
         </a>
       </div>
     </footer>
