@@ -32,7 +32,6 @@ To add more features to this project, or to simply view the code in action...
 ## Current Issues
 
 - The app needs to be fully responsive, it is currently only suitable for desktop use.
-- Some movie poster images on the detail pages are warped - image could do with some styling for consistency.
 - Rarely a trivia question/answer will be displayed with odd characters - must translate before display.
    
 ## Future Iterations
