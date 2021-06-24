@@ -55,10 +55,10 @@ const TriviaQuestion = ({ trivia }) => {
       <h2><u>MOVIE TRIVIA</u></h2>
       <p>{decodeQuestion(trivia.question)}</p>
       <form className="triviaAnswers">
-        <input className="answerOne" type="button" value={randomizedAnswers[0]} onClick={revealTriviaFeedback} />
-        <input className="answerTwo" type="button" value={randomizedAnswers[1]} onClick={revealTriviaFeedback} />
-        <input className="answerThree" type="button" value={randomizedAnswers[2]} onClick={revealTriviaFeedback} />
-        <input className="answerFour" type="button" value={randomizedAnswers[3]} onClick={revealTriviaFeedback} />
+        <input className="answerOne" type="button" value={decodeQuestion(randomizedAnswers[0])} onClick={revealTriviaFeedback} />
+        <input className="answerTwo" type="button" value={decodeQuestion(randomizedAnswers[1])} onClick={revealTriviaFeedback} />
+        <input className="answerThree" type="button" value={decodeQuestion(randomizedAnswers[2])} onClick={revealTriviaFeedback} />
+        <input className="answerFour" type="button" value={decodeQuestion(randomizedAnswers[3])} onClick={revealTriviaFeedback} />
       </form>
       <button className='triviaRefreshButton hidden' onClick={() => refreshTrivia()}>REFRESH</button>
     </section>
