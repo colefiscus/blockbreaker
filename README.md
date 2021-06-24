@@ -32,7 +32,6 @@ To add more features to this project, or to simply view the code in action...
 ## Current Issues
 
 - The app needs to be fully responsive, it is currently only suitable for desktop use.
-- Rarely a trivia question/answer will be displayed with odd characters - must translate before display.
    
 ## Future Iterations
 
