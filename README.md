@@ -27,7 +27,7 @@ To add more features to this project, or to simply view the code in action...
 
 ## App in Action
 
-![BlockBreaker](https://media-exp1.licdn.com/dms/image/C5622AQGCfNjPtJeirg/feedshare-shrink_2048_1536/0/1620693096190?e=1626912000&v=beta&t=MwHr7cLyjGTGl89W37RX9idD8T1ooidqVP2lkTGKnzg)
+![blockbreaker_gif](https://user-images.githubusercontent.com/58485286/124033469-36689c00-d9b7-11eb-9db0-1dc4afe3c02d.gif)
 
 ## Current Issues
 
