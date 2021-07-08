@@ -3,12 +3,14 @@ import './TriviaQuestion.css';
 
 const TriviaQuestion = ({ trivia }) => {
 
+  // Trivia questions from API come in with encoded symbols - must be decoded for UX.
   const decodeQuestion = (question) => {
     const text = document.createElement("textarea");
     text.innerHTML = question;
     return text.value;
   }
 
+  // Trivia answers must be randomized otherwise they'll show up the same on every load.
   const randomizeQuestions = () => {
     let allAnswers = [...trivia.incorrect_answers, trivia.correct_answer]
     let currentIndex = allAnswers.length, tempAnswer, randomIndex
@@ -22,11 +24,13 @@ const TriviaQuestion = ({ trivia }) => {
     return allAnswers
   }
 
+  // Reveals button to reload page for new trivia question after selection is made.
   const revealTriviaRefresh = () => {
     const triviaButton = document.querySelector('.triviaRefreshButton');
     triviaButton.classList.remove('hidden');
   }
 
+  // Reveals correct answer after selection is made.
   const revealTriviaFeedback = () => {
     const answerOne =  document.querySelector('.answerOne');
     const answerTwo = document.querySelector('.answerTwo');
@@ -44,6 +48,7 @@ const TriviaQuestion = ({ trivia }) => {
     revealTriviaRefresh();
   }
 
+  // Reloads page for new trivia question.
   const refreshTrivia = () => {
     window.location.reload();
   }
