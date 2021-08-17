@@ -4,7 +4,7 @@
 
 Blockbreaker is a solo project built by [Cole Fiscus](https://github.com/colefiscus). It was based off of a [Turing School of Software and Design](turing.edu) project that takes inspiration from the Rotten Tomatoes website. The goal was to create a React app while using the fetch API, CSS, and JavaScript to retrieve data about different movie titles and display that data in an interesting way.
 
-Visit the deployed site - [Blockbreaker](https://block--breaker.herokuapp.com/).
+Visit the deployed site - [Blockbreaker](https://block--breaker.herokuapp.com/). I've used Heroku so initial load may take longer than usual.
 
 For more detailed additional features, see below.
 
